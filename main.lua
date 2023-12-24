@@ -85,7 +85,16 @@ function Parser:advance()
 end
 
 local lexer = Lexer.new("2 / 2")
-local parser = Parser.new(lexer:lex())
+local tokens = lexer:lex()
+local parser = Parser.new(tokens)
+
+for index, token in ipairs(tokens) do
+    print("-----------------------")
+    print("Type:", token.type)
+    print("Value:", token.value)
+    print("-----------------------")
+end
+
 local result = parser:parse_expression()
 
 print("Result:", result)
