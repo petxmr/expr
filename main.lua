@@ -88,4 +88,4 @@ local lexer = Lexer.new("2 / 2")
 local parser = Parser.new(lexer:lex())
 local result = parser:parse_expression()
 
-print(`Result: {result}`)
+print("Result:", result)
